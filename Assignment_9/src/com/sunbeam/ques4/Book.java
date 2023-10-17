@@ -44,7 +44,23 @@ public class Book {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
+	@Override
+	public boolean equals(Object obj){
+	if(obj == null)
+		return false;
+	if(this == obj)
+		return true;
+	if(obj instanceof Book){
+		Book other = (Book) obj;
+		if(this.isbn.equals(other.getIsbn())){
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		return false;
+		
+	}
 	@Override
 	public String toString() {
 		return "Book [isbn=" + isbn + ", price=" + price + ", authorName=" + authorName + ", quantity=" + quantity
